@@ -1,5 +1,5 @@
 """"
-Sell a comic
+Restock comic books in the comic book store.
 """
 
 
@@ -30,7 +30,24 @@ class ComicBookStore:
                 print(f"Sorry, {comic_name} is out of stock. Please try again.")
 
 
+# Restocking comic books
+def restock_comic(self, comic_name, quantity):
+    while True:
+        comic = input("Enter the name of the comic you want to restock or type 'quit': ").title()
+        quantity = int(input("Enter the quantity to restock: "))
+
+        if comic == 'Quit':
+            break
+        if comic_name in self.comics: ### FIX THIS AND TEST IT SO YOU KNOW WHY ITS BAD JACK OK ITS LIKE MAN YOU GOTTA MAKE SURE THE COMICS ARE IN THE ACTUAL CLASS BEFORE MOVING ON WITH THE SCRIPT YOU FEEL ME
+
+            self.comics[comic_name] += quantity
+            print(f"Restocked {quantity} copies of {comic_name}.")
+        else:
+            print(f"Comic {comic_name} not found. Please try again.")
+
+
 # Main Routine
-ComicBookStore().sell_comic()
+comic_store = ComicBookStore()
+restock_comic(comic_store, "Super Dude", 5)
 
 
