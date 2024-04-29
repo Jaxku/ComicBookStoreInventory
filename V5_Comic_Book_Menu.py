@@ -1,5 +1,5 @@
 """"
-Restock comic books in the comic book store.
+Includes function that displays the amount of stock for each comic book and the total number of comics sold.
 """
 
 
@@ -51,7 +51,39 @@ def restock_comic(self):
             print(f"Comic {comic} not found. Please try again.")
 
 
+# Display comic book stock levels
+def display_stock_levels(self):
+    print("Comic Book Stock Levels")
+    print("=======================")
+    for comic, stock_level in self.comics.items():
+        print(f"{comic}: {stock_level}")
+    print(f"Total comics sold: {self.total_sold}")
+
+
+# Main Menu Function
+def main_menu:
+    print("########")
+    print("Welcome to the Comic Book Store POS System")
+    print("########")
+    while True:
+        menu_input = input("Enter 'S' to sell a comic, "
+                      "'R' to restock a comic, "
+                      "'D' to display stock levels "
+                      "or 'Q' to quit: ").upper()
+
+        if menu_input == 'S':
+            pass
+        elif menu_input == 'R':
+            pass
+        elif menu_input == 'D':
+            display_stock_levels(comic_store)
+        elif menu_input == 'Q':
+            break
+
+
+
 # Main Routine
 comic_store = ComicBookStore()
-restock_comic(comic_store)
+main_menu()
+
 
