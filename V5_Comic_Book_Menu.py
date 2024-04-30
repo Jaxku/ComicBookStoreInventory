@@ -11,30 +11,31 @@ class ComicBookStore:
     }
     total_sold = 0
 
-    def sell_comic(self):
-        global comic_name
-        good_input = False
-        while not good_input:
-            comic_name = input("Enter the name of the comic"
-                               " you want to sell or type 'Quit': ")\
-                .title()
-            comic = ComicBookStore.comics.get(comic_name)
 
-            if comic_name == 'Quit':
-                break
+def sell_comic(self):
+    global comic_name
+    good_input = False
+    while not good_input:
+        comic_name = input("Enter the name of the comic"
+                           " you want to sell or type 'Quit': ")\
+            .title()
+        comic = ComicBookStore.comics.get(comic_name)
 
-            if comic is None:
-                print(f"Sorry, {comic_name} does not exist. Please try again.")
-            else:
-                good_input = True
-            if comic_name in self.comics and self.comics[comic_name] > 0:
-                self.comics[comic_name] -= 1
-                self.total_sold += 1
-                print(f"Sold 1 copy of {comic_name}.")
-            elif comic_name not in self.comics:
-                print(f"Sorry, {comic_name} does not exist. Please try again.")
-            else:
-                print(f"Sorry, {comic_name} is out of stock. Please try again.")
+        if comic_name == 'Quit':
+            break
+
+        if comic is None:
+            print(f"Sorry, {comic_name} does not exist. Please try again.")
+        else:
+            good_input = True
+        if comic_name in self.comics and self.comics[comic_name] > 0:
+            self.comics[comic_name] -= 1
+            self.total_sold += 1
+            print(f"Sold 1 copy of {comic_name}.")
+        elif comic_name not in self.comics:
+            print(f"Sorry, {comic_name} does not exist. Please try again.")
+        else:
+            print(f"Sorry, {comic_name} is out of stock. Please try again.")
 
 
 # Restocking comic books
@@ -61,7 +62,7 @@ def display_stock_levels(self):
 
 
 # Main Menu Function
-def main_menu:
+def main_menu():
     print("########")
     print("Welcome to the Comic Book Store POS System")
     print("########")
@@ -71,13 +72,13 @@ def main_menu:
                       "'D' to display stock levels "
                       "or 'Q' to quit: ").upper()
 
-        if menu_input == 'S':
-            pass
-        elif menu_input == 'R':
-            pass
-        elif menu_input == 'D':
+        if menu_input == 'S':    # Sell comic
+            sell_comic(comic_store)
+        elif menu_input == 'R':     # Restock comic
+            restock_comic(comic_store)
+        elif menu_input == 'D':     # Display stock levels
             display_stock_levels(comic_store)
-        elif menu_input == 'Q':
+        elif menu_input == 'Q':     # Quit
             break
 
 
