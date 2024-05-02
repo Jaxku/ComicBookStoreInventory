@@ -1,5 +1,5 @@
 """"
-Based off of V5_Comic_Book_Store.py in this version it writes class data to file  to use advance programming techniques.
+Final Program touch ups added to me more swag and consistent and function better
 """
 
 

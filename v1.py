@@ -1,3 +1,7 @@
+"""
+Mock up verison
+"""
+
 class ComicBookStore:
     def __init__(self):
         self.comics = {
